@@ -9,7 +9,7 @@ import (
 )
 
 func Connection() (*sqlx.DB, error) {
-	dsn := "host=localhost port=5432 user=postgres password=123321 dbname=replica sslmode=disable"
+	dsn := "host=postgres1 port=5432 user=postgres password=123321 dbname=replica sslmode=disable"
 	db, err := sqlx.Open("postgres", dsn)
 	if err != nil {
 		log.Printf("Error opening database connection: %v", err)
