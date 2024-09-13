@@ -79,7 +79,7 @@ func (m *Methods) GetByID(c *gin.Context) {
 
 	var res User
 
-	err := m.db.Get(&res, "select * from users where id = $1 UNION ALL select * from users where id = $2", id, id)
+	err := m.db.Get(&res, "select * from users where id = $1 UNION ALL select * from users_server2 where id = $2", id, id)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		log.Printf("Prepare error: %v", err)
