@@ -8,7 +8,7 @@ CREATE TABLE users
     age   INT          NOT NULL
 );
 
-CREATE SERVER server2_fdw FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host '3.125.33.48', port '5433', dbname 'replica');
+CREATE SERVER server2_fdw FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host '16.170.235.75', port '5433', dbname 'replica');
 CREATE USER MAPPING FOR postgres SERVER server2_fdw OPTIONS (user 'postgres', password '123321');
 CREATE FOREIGN TABLE users_server2 (
     id UUID,
